@@ -19,7 +19,8 @@
 - 🔄 **Monthly & Annual Toggle** - Calculate tax for any income period
 - 📉 **Tax Deductions** - Pension, NHIS, NHF, rent relief, and more
 - 📈 **Old vs New Comparison** - See your savings under the new reform
-- 📰 **Live Tax News** - Google RSS feed integration for latest updates
+- � **PDF Export** - Download detailed tax report with full breakdown
+- �📰 **Live Tax News** - Google RSS feed integration for latest updates
 - 📱 **Fully Responsive** - Works on desktop, tablet, and mobile
 - 🌙 **Dark Mode Support** - Easy on the eyes
 - 🔍 **SEO Optimized** - Schema markup, Open Graph, Twitter Cards
