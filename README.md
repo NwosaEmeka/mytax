@@ -74,47 +74,6 @@ npm start
 
 ---
 
-## 🛠️ Tech Stack
-
-| Technology                                    | Purpose                         |
-| --------------------------------------------- | ------------------------------- |
-| [Next.js 16](https://nextjs.org/)             | React framework with App Router |
-| [React 19](https://react.dev/)                | UI library                      |
-| [TypeScript](https://www.typescriptlang.org/) | Type safety                     |
-| [Tailwind CSS 4](https://tailwindcss.com/)    | Styling                         |
-| [shadcn/ui](https://ui.shadcn.com/)           | UI components                   |
-| [Radix UI](https://www.radix-ui.com/)         | Accessible primitives           |
-
----
-
-## 📁 Project Structure
-
-```
-mytax/
-├── app/
-│   ├── api/
-│   │   └── news/          # Google RSS feed API
-│   ├── layout.tsx         # Root layout with SEO
-│   ├── page.tsx           # Home page
-│   ├── robots.ts          # Dynamic robots.txt
-│   ├── sitemap.ts         # Dynamic sitemap
-│   ├── opengraph-image.tsx
-│   └── twitter-image.tsx
-├── components/
-│   ├── ui/                # shadcn/ui components
-│   ├── TaxCalculator.tsx  # Main calculator
-│   ├── TaxInfo.tsx        # Tax information display
-│   └── TaxNews.tsx        # RSS news feed
-├── lib/
-│   ├── tax-calculator.ts  # Core tax logic
-│   └── utils.ts           # Utilities
-└── public/
-    ├── manifest.json      # PWA manifest
-    └── icon.svg           # App icon
-```
-
----
-
 ## 💰 Tax Deductions Supported
 
 | Deduction              | Description                           |
@@ -134,10 +93,7 @@ Create a `.env.local` file in the root directory:
 
 ```env
 # Site URL (for SEO and sitemap)
-NEXT_PUBLIC_SITE_URL=https://taxcalc.com.ng
-
-# Google AdSense (optional)
-NEXT_PUBLIC_ADSENSE_ID=ca-pub-XXXXXXXXXXXXXXXX
+NEXT_PUBLIC_SITE_URL=
 ```
 
 ---
@@ -163,12 +119,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## ⚠️ Disclaimer
 
 This calculator provides estimates based on publicly available information about the Nigeria Tax Reform 2025. The actual gazetted versions may contain variations. **Please consult a qualified tax professional for official tax advice and planning.**
@@ -177,19 +127,7 @@ This calculator provides estimates based on publicly available information about
 
 ## 👨‍💻 Author
 
-**Your Name**
-
-- Website: [yourwebsite.com](https://yourwebsite.com)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- GitHub: [@yourusername](https://github.com/yourusername)
-
----
-
-## ⭐ Show Your Support
-
-Give a ⭐️ if this project helped you calculate your Nigerian taxes!
-
----
+**Emeka**
 
 <p align="center">
   Made with ❤️ in Nigeria 🇳🇬
