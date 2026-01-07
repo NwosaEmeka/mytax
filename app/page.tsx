@@ -1,65 +1,132 @@
-import Image from "next/image";
+import TaxCalculator from "@/components/TaxCalculator";
+import TaxNews from "@/components/TaxNews";
+import TaxInfo from "@/components/TaxInfo";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen">
+      {/* Header */}
+      <header className="bg-green-700 text-white py-6 shadow-lg">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-3">
+            <span className="text-4xl">🇳🇬</span>
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold">MyTax Nigeria</h1>
+              <p className="text-green-100 text-sm md:text-base">
+                Personal Income Tax Calculator - 2025 Tax Reform
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Calculator - Main Column */}
+          <div className="lg:col-span-2 space-y-8">
+            <TaxCalculator />
+            <TaxInfo />
+          </div>
+
+          {/* Sidebar - News */}
+          <div className="space-y-6">
+            <TaxNews />
+
+            {/* Official Documents */}
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+              <h3 className="font-semibold mb-3 text-sm uppercase text-muted-foreground">
+                📜 Official Documents
+              </h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:underline flex items-center gap-2"
+                  >
+                    📄 Nigeria Tax Act 2025 (PDF)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://tat.gov.ng/NIGERIA-TAX-ADMINISTRATION-ACT-2025.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:underline flex items-center gap-2"
+                  >
+                    📄 Tax Administration Act 2025 (PDF)
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+              <h3 className="font-semibold mb-3 text-sm uppercase text-muted-foreground">
+                Useful Links
+              </h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://tat.gov.ng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:underline flex items-center gap-2"
+                  >
+                    🏛️ Nigeria Tax Administration (TAT)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.firs.gov.ng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:underline flex items-center gap-2"
+                  >
+                    🏛️ Federal Inland Revenue Service (FIRS)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.pwc.com/ng/en/publications/nigeria-tax-reform-2025.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:underline flex items-center gap-2"
+                  >
+                    📊 PwC Tax Reform Analysis
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Info Box */}
+            <div className="bg-linear-to-br from-green-600 to-green-700 text-white rounded-lg shadow p-4">
+              <h3 className="font-semibold mb-2">💡 Did You Know?</h3>
+              <p className="text-sm text-green-100">
+                The new 2025 Tax Reform exempts individuals earning ₦800,000 or
+                less per year from personal income tax. This means if you earn
+                about ₦66,667 or less monthly, you don&apos;t pay income tax!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-100 dark:bg-gray-900 border-t mt-12 py-8">
+        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} MyTax Nigeria.</p>
+          <p className="mt-2">
+            This calculator is for informational purposes only. Consult a tax
+            professional for official advice.
+          </p>
+          <p className="mt-2 text-xs">
+            Tax information based on Nigeria Tax Reform Acts signed June 2025
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }

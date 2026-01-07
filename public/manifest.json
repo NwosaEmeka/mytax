@@ -1,0 +1,27 @@
+{
+  "name": "MyTax Nigeria - Personal Income Tax Calculator",
+  "short_name": "MyTax NG",
+  "description": "Free Nigerian personal income tax calculator based on the 2025 Tax Reform Act",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#15803d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "utilities"],
+  "lang": "en-NG",
+  "dir": "ltr"
+}
