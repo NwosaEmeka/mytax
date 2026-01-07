@@ -28,7 +28,7 @@ export default function TaxCalculator() {
   const [calculationType, setCalculationType] = useState<"monthly" | "annual">(
     "monthly"
   );
-  const [showComparison, setShowComparison] = useState(false);
+  const [showComparison, setShowComparison] = useState(true);
   const [showDeductions, setShowDeductions] = useState(false);
 
   // Deduction states (stored as annual values)
@@ -490,89 +490,91 @@ export default function TaxCalculator() {
             onClick={() => setShowComparison(!showComparison)}
             className="w-full"
           >
-            Old vs New Policy Comparison
+            {showComparison ? "Hide" : "Show"} Old vs New Policy Comparison
           </Button>
 
           {/* Policy Comparison */}
-          <Card className="border-blue-200">
-            <CardHeader>
-              <CardTitle>Old Policy vs New 2025 Reform</CardTitle>
-              <CardDescription>
-                See how the new tax reform affects your tax liability
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Old Policy */}
-                <div className="space-y-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                  <h4 className="font-semibold text-gray-600 dark:text-gray-300">
-                    Previous Policy (PITA 2011)
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span>Annual Tax:</span>
-                      <span className="font-medium text-red-600">
-                        {formatCurrency(oldPolicyResult.totalTax)}
-                      </span>
+          {showComparison && (
+            <Card className="border-blue-200">
+              <CardHeader>
+                <CardTitle>Old Policy vs New 2025 Reform</CardTitle>
+                <CardDescription>
+                  See how the new tax reform affects your tax liability
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Old Policy */}
+                  <div className="space-y-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <h4 className="font-semibold text-gray-600 dark:text-gray-300">
+                      Previous Policy (PITA 2011)
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span>Annual Tax:</span>
+                        <span className="font-medium text-red-600">
+                          {formatCurrency(oldPolicyResult.totalTax)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Monthly Tax:</span>
+                        <span className="font-medium text-red-600">
+                          {formatCurrency(toMonthly(oldPolicyResult.totalTax))}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Effective Rate:</span>
+                        <span className="font-medium">
+                          {oldPolicyResult.effectiveTaxRate.toFixed(2)}%
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Monthly Tax:</span>
-                      <span className="font-medium text-red-600">
-                        {formatCurrency(toMonthly(oldPolicyResult.totalTax))}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Effective Rate:</span>
-                      <span className="font-medium">
-                        {oldPolicyResult.effectiveTaxRate.toFixed(2)}%
-                      </span>
+                  </div>
+
+                  {/* New Policy */}
+                  <div className="space-y-3 p-4 bg-green-50 dark:bg-green-900 rounded-lg">
+                    <h4 className="font-semibold text-green-700 dark:text-green-300">
+                      New 2025 Tax Reform ✓
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span>Annual Tax:</span>
+                        <span className="font-medium text-red-600">
+                          {formatCurrency(newPolicyResult.totalTax)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Monthly Tax:</span>
+                        <span className="font-medium text-red-600">
+                          {formatCurrency(toMonthly(newPolicyResult.totalTax))}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Effective Rate:</span>
+                        <span className="font-medium">
+                          {newPolicyResult.effectiveTaxRate.toFixed(2)}%
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* New Policy */}
-                <div className="space-y-3 p-4 bg-green-50 dark:bg-green-900 rounded-lg">
-                  <h4 className="font-semibold text-green-700 dark:text-green-300">
-                    New 2025 Tax Reform ✓
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span>Annual Tax:</span>
-                      <span className="font-medium text-red-600">
-                        {formatCurrency(newPolicyResult.totalTax)}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Monthly Tax:</span>
-                      <span className="font-medium text-red-600">
-                        {formatCurrency(toMonthly(newPolicyResult.totalTax))}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Effective Rate:</span>
-                      <span className="font-medium">
-                        {newPolicyResult.effectiveTaxRate.toFixed(2)}%
-                      </span>
-                    </div>
+                {/* Savings */}
+                {savings > 0 && (
+                  <div className="mt-4 p-4 bg-green-100 dark:bg-green-900 rounded-lg text-center">
+                    <p className="text-green-800 dark:text-green-300 font-semibold">
+                      🎉 You save {formatCurrency(savings)} annually with the
+                      new tax reform!
+                    </p>
+                    <p className="text-green-700 dark:text-green-400 text-sm">
+                      That&apos;s {formatCurrency(toMonthly(savings))} extra per
+                      month
+                    </p>
                   </div>
-                </div>
-              </div>
-
-              {/* Savings */}
-              {savings > 0 && (
-                <div className="mt-4 p-4 bg-green-100 dark:bg-green-900 rounded-lg text-center">
-                  <p className="text-green-800 dark:text-green-300 font-semibold">
-                    🎉 You save {formatCurrency(savings)} annually with the new
-                    tax reform!
-                  </p>
-                  <p className="text-green-700 dark:text-green-400 text-sm">
-                    That&apos;s {formatCurrency(toMonthly(savings))} extra per
-                    month
-                  </p>
-                </div>
-              )}
-            </CardContent>
-          </Card>
+                )}
+              </CardContent>
+            </Card>
+          )}
         </>
       )}
     </div>
