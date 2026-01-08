@@ -112,7 +112,7 @@ export default async function Image() {
             color: "#bbf7d0",
           }}
         >
-          taxbox.com.ng
+          taxcalc.com.ng
         </div>
       </div>
     ),

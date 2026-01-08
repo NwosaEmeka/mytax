@@ -142,7 +142,7 @@ export function exportTaxBreakdownToPDF(data: PDFExportData) {
     doc.setFontSize(8);
     doc.setTextColor(150);
     doc.text(
-      `Generated on ${new Date().toLocaleDateString("en-NG")} | taxbox.com.ng`,
+      `Generated on ${new Date().toLocaleDateString("en-NG")} | taxcalc.com.ng`,
       pageWidth / 2,
       285,
       { align: "center" }

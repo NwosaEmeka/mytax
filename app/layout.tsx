@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://taxbox.com.ng";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://taxcalc.com.ng";
 
 export const viewport: Viewport = {
   width: "device-width",
