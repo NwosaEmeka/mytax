@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**Live Demo:** [taxcalc.com.ng](https://taxcalc.com.ng)
+**Live Demo:** [taxbox.com.ng](https://taxbox.com.ng)
 
 ---
 

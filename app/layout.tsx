@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://taxcalc.com.ng";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://taxbox.com.ng";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default:
-      "MyTax Nigeria - Free Personal Income Tax Calculator 2025 | PAYE Calculator",
-    template: "%s | MyTax Nigeria",
+      "Taxbox Naija - Free Personal Income Tax Calculator 2025 | PAYE Calculator",
+    template: "%s | Taxbox Naija",
   },
   description:
     "Free Nigerian personal income tax calculator based on the 2025 Tax Reform Act. Calculate your PAYE, tax brackets, deductions & reliefs. First ₦800,000 is tax-free!",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     "tax free income Nigeria",
     "PIT calculator Nigeria",
   ],
-  authors: [{ name: "MyTax Nigeria" }],
-  creator: "MyTax Nigeria",
-  publisher: "MyTax Nigeria",
+  authors: [{ name: "Taxbox Naija" }],
+  creator: "Taxbox Naija",
+  publisher: "Taxbox Naija",
   formatDetection: {
     email: false,
     address: false,
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
     url: siteUrl,
-    siteName: "MyTax Nigeria",
-    title: "MyTax Nigeria - Free Personal Income Tax Calculator 2025",
+    siteName: "Taxbox Naija",
+    title: "Taxbox Naija - Free Personal Income Tax Calculator 2025",
     description:
       "Calculate your Nigerian personal income tax based on the 2025 Tax Reform Act. Free PAYE calculator with deductions, reliefs & tax brackets. First ₦800,000 is tax-free!",
     images: [
@@ -74,17 +74,17 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "MyTax Nigeria - Personal Income Tax Calculator",
+        alt: "Taxbox Naija - Personal Income Tax Calculator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MyTax Nigeria - Free Personal Income Tax Calculator 2025",
+    title: "Taxbox Naija - Free Personal Income Tax Calculator 2025",
     description:
       "Calculate your Nigerian PAYE tax based on the 2025 Tax Reform Act. First ₦800,000 is tax-free!",
     images: ["/og-image.png"],
-    creator: "@mytaxng",
+    creator: "@taxboxng",
   },
   robots: {
     index: true,
@@ -113,7 +113,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       "@id": `${siteUrl}/#webapp`,
-      name: "MyTax Nigeria",
+      name: "Taxbox Naija",
       description:
         "Free Nigerian personal income tax calculator based on the 2025 Tax Reform Act",
       url: siteUrl,
@@ -135,7 +135,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      name: "MyTax Nigeria",
+      name: "Taxbox Naija",
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
@@ -147,7 +147,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "MyTax Nigeria",
+      name: "Taxbox Naija",
       description: "Nigeria Personal Income Tax Calculator",
       publisher: {
         "@id": `${siteUrl}/#organization`,

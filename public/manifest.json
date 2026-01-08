@@ -1,6 +1,6 @@
 {
-  "name": "MyTax Nigeria - Personal Income Tax Calculator",
-  "short_name": "MyTax NG",
+  "name": "Taxbox Naija - Personal Income Tax Calculator",
+  "short_name": "Taxbox NG",
   "description": "Free Nigerian personal income tax calculator based on the 2025 Tax Reform Act",
   "start_url": "/",
   "display": "standalone",

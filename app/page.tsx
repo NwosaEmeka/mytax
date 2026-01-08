@@ -11,7 +11,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <span className="text-4xl">🇳🇬</span>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold">MyTax Nigeria</h1>
+              <h1 className="text-2xl md:text-3xl font-bold">Taxbox Naija</h1>
               <p className="text-green-100 text-sm md:text-base">
                 Personal Income Tax Calculator - 2025 Tax Reform
               </p>
@@ -117,7 +117,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-100 dark:bg-gray-900 border-t mt-12 py-8">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} MyTax Nigeria.</p>
+          <p>© {new Date().getFullYear()} Taxbox Naija.</p>
           <p className="mt-2">
             This calculator is for informational purposes only. Consult a tax
             professional for official advice.

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "MyTax Nigeria - Personal Income Tax Calculator 2025";
+export const alt = "Taxbox Naija - Personal Income Tax Calculator 2025";
 export const size = {
   width: 1200,
   height: 630,
@@ -45,7 +45,7 @@ export default async function Image() {
             textAlign: "center",
           }}
         >
-          MyTax Nigeria
+          Taxbox Naija
         </div>
 
         {/* Subtitle */}
@@ -112,7 +112,7 @@ export default async function Image() {
             color: "#bbf7d0",
           }}
         >
-          taxcalc.com.ng
+          taxbox.com.ng
         </div>
       </div>
     ),
