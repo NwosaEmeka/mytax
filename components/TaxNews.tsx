@@ -113,24 +113,29 @@ export default function TaxNews() {
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          {news.map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border"
-            >
-              <h4 className="font-medium text-sm line-clamp-2 hover:text-green-600">
-                {item.title}
-              </h4>
-              <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
-                <span>{item.source}</span>
-                <span>•</span>
-                <span>{item.pubDate}</span>
-              </div>
-            </a>
-          ))}
+          {news
+            .sort(
+              (a, b) =>
+                new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+            )
+            .map((item, index) => (
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border"
+              >
+                <h4 className="font-medium text-sm line-clamp-2 hover:text-green-600">
+                  {item.title}
+                </h4>
+                <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
+                  <span>{item.source}</span>
+                  <span>•</span>
+                  <span>{item.pubDate}</span>
+                </div>
+              </a>
+            ))}
         </div>
         <p className="mt-4 text-xs text-muted-foreground text-center">
           Powered by Google News RSS
